@@ -16,7 +16,7 @@ public interface IFoyerRepository extends CrudRepository<Foyer,Long> {
 
     List<Foyer> getFoyerByCapaciteFoyerBetweenAndNomFoyer(long val1, long val2, String nom);
 
-    @Query("select f. from Foyer f")
-    List<Foyer> retrieveAll();
+    /*@Query("select f. from Foyer f")
+    List<Foyer> retrieveAll();*/
 
 }
