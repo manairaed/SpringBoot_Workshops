@@ -1,13 +1,11 @@
 package tn.esprit.manairaed4sim1.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.Set;
 
 
 @Getter
@@ -23,4 +21,7 @@ public class Reservation {
     private long idReservation;
     private Date anneUniversitaire;
     private boolean estValide;
+
+    @ManyToMany
+    Set<Etudiant> setEtudiants;
 }

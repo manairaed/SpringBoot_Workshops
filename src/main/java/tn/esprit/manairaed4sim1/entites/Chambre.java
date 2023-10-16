@@ -1,11 +1,10 @@
 package tn.esprit.manairaed4sim1.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,4 +20,10 @@ public class Chambre {
     private long idChambre;
     private long numeroChambre;
     private TypeChambre typeC;
+
+    @ManyToOne
+    Bloc bloc;
+
+    @OneToMany
+    Set<Reservation> setReservations;
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @Entity
@@ -20,4 +22,9 @@ public class Bloc {
 
     @ManyToOne
     Foyer foyer;
+
+    @OneToMany(mappedBy = "bloc")
+    Set<Chambre> setChambres;
+
+
 }
