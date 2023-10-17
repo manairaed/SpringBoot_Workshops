@@ -1,6 +1,6 @@
 # Spring Boot Workshops for Software Engineering Training
 
-Welcome to the repository for Spring Boot workshops in the context of your software engineering training. This repository contains resources, exercises, and code examples to help you master Spring Boot and Java-based web application development.
+Welcome to the repository for Spring Boot workshops in the context of my software engineering training. This repository contains resources, exercises, and code examples to help you master Spring Boot and Java-based web application development.
 
 ## Introduction
 
