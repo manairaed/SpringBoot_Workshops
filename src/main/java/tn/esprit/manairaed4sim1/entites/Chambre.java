@@ -19,6 +19,8 @@ public class Chambre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idChambre;
     private long numeroChambre;
+
+    @Enumerated(EnumType.ORDINAL.STRING)
     private TypeChambre typeC;
 
     @ManyToOne
