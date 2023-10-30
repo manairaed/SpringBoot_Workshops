@@ -20,7 +20,7 @@ public class Chambre {
     private long idChambre;
     private long numeroChambre;
 
-    @Enumerated(EnumType.ORDINAL.STRING)
+    @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 
     @ManyToOne

@@ -3,7 +3,6 @@ package tn.esprit.manairaed4sim1.services.ServicesImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.manairaed4sim1.entites.Etudiant;
-import tn.esprit.manairaed4sim1.repositories.IBlocRepository;
 import tn.esprit.manairaed4sim1.repositories.IEtudiantRepository;
 import tn.esprit.manairaed4sim1.services.EtudiantService;
 

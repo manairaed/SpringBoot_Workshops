@@ -1,7 +1,6 @@
 package tn.esprit.manairaed4sim1.services.ServicesImpl;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.manairaed4sim1.repositories.IBlocRepository;
 import tn.esprit.manairaed4sim1.entites.Bloc;
