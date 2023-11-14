@@ -1,6 +1,7 @@
 package tn.esprit.manairaed4sim1.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.manairaed4sim1.entites.Bloc;
 import tn.esprit.manairaed4sim1.services.BlocService;
@@ -37,5 +38,16 @@ public class BlocRestController {
     @DeleteMapping("/{id}")
     public void deleteBloc(@PathVariable("id") Long id) {
         blocService.deleteBloc(id);
+    }
+
+    @PostMapping("/{nomBloc}/affecter-chambres")
+    public ResponseEntity<Bloc> affecterChambresABloc(@RequestBody List<Long> numChambres,
+                                                      @PathVariable("nomBloc") String nomBloc) {
+        Bloc blocAffecte = blocService.affecterChambresABloc(numChambres, nomBloc);
+        if (blocAffecte != null) {
+            return ResponseEntity.ok(blocAffecte);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

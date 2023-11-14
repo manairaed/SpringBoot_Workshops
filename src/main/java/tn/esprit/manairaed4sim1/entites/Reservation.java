@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -19,7 +20,11 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idReservation;
-    private Date anneUniversitaire;
+
+    private String numReservation;
+
+    private LocalDate debutAnneUniver;
+    private LocalDate finAnneUniver;
     private boolean estValide;
 
     @ManyToMany

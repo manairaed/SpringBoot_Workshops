@@ -38,4 +38,10 @@ public class ReservationRestController {
     public void deleteReservation(@PathVariable("id") Long id) {
         reservationService.deleteReservation(id);
     }
+
+    @PostMapping("/addReservation/{id}/{cin}")
+    public Reservation addReservationAvance (@PathVariable("id") Long id,@PathVariable("cin") Long cin) {
+        return reservationService.ajouterReservation(id,cin);
+    }
+
 }

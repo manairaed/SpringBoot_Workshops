@@ -1,6 +1,7 @@
 package tn.esprit.manairaed4sim1.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.manairaed4sim1.entites.Universite;
 import tn.esprit.manairaed4sim1.services.UniversiteService;
@@ -37,5 +38,16 @@ public class UniversiteRestController {
     @DeleteMapping("/{id}")
     public void deleteUniversite(@PathVariable("id") Long id) {
         universiteService.deleteUniversite(id);
+    }
+
+    @PostMapping("/affecter-foyer/{idFoyer}/{nomUniversite}")
+    public Universite affecterFoyerAUniversite(@PathVariable("idFoyer") Long idFoyer, @PathVariable("nomUniversite") String nomUniversite) {
+        return universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+    @PostMapping("/{idUniversite}/desaffecter-foyer")
+    public ResponseEntity<Universite> desaffecterFoyerAUniversite(@PathVariable("idUniversite") long idUniversite) {
+        Universite universiteDesaffectee = universiteService.desaffecterFoyerAUniversite(idUniversite);
+        return ResponseEntity.ok(universiteDesaffectee);
     }
 }

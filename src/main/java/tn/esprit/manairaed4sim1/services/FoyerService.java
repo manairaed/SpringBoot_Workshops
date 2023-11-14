@@ -10,4 +10,6 @@ public interface FoyerService {
     public List<Foyer> getAllFoyer ();
     public Foyer getFoyer(Long id);
     public void deleteFoyer(Long id);
+    public Foyer ajouterFoyerEtAffecterAUniversite (Foyer foyer, long idUniversite) ;
+
 }

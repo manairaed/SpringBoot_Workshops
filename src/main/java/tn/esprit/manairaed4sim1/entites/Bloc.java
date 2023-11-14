@@ -17,13 +17,14 @@ public class Bloc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idBloc;
+
     private String nomBloc;
     private long capaciteBloc;
 
     @ManyToOne
     Foyer foyer;
 
-    @OneToMany(mappedBy = "bloc")
+    @OneToMany(mappedBy = "bloc" , cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER)
     Set<Chambre> setChambres;
 
 

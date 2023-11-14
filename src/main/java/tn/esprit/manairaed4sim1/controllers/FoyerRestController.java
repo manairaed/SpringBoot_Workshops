@@ -1,6 +1,7 @@
 package tn.esprit.manairaed4sim1.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.manairaed4sim1.entites.Foyer;
 import tn.esprit.manairaed4sim1.services.FoyerService;
@@ -38,6 +39,13 @@ public class FoyerRestController {
     public void deleteFoyer(@PathVariable("id") Long id) {
         foyerService.deleteFoyer(id);
 
+    }
+
+    @PostMapping("/ajouter-et-affecter")
+    public ResponseEntity<Foyer> ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer foyer,
+                                                                   @RequestParam("idUniversite") long idUniversite) {
+        Foyer foyerAjoute = foyerService.ajouterFoyerEtAffecterAUniversite(foyer, idUniversite);
+        return ResponseEntity.ok(foyerAjoute);
     }
 
 }

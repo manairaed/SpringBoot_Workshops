@@ -10,4 +10,7 @@ public interface BlocService {
     public List<Bloc> getAllBloc ();
     public Bloc getBloc(Long id);
     public void deleteBloc(Long id);
+
+    public Bloc affecterChambresABloc(List<Long> numChambre, String nomBloc) ;
+    public Bloc affecterBlocAFoyer (long idBloc, long idFoyer) ;
 }
